@@ -68,7 +68,7 @@ export class PSUCard extends DDDSuper(I18NMixin(LitElement)) {
           display: block;
           margin: 0;
           width: 100%;
-          height: 150px;
+          //height: 150px;
           /* Ensuring that the image corners match the card's rounded corners */
           border-radius: var(--ddd-radius-lg) var(--ddd-radius-lg) 0 0;
         }
