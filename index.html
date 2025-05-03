@@ -5,17 +5,19 @@
   <title>PSU-Card Demo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    /* Global base styles using DDD design tokens */
     :root, html, body {
       margin: 0;
       padding: 0;
-      font-family: var(--ddd-font-primary, Arial, sans-serif);
+      font-family: var(--ddd-font-primary);
+      min-height: 100vh;
+      background-color: grey;  /* ← use correct grey token */
     }
     #demo {
-      margin: var(--ddd-spacing-4, 20px);
+      background-color: grey;  /* ← use correct grey token */
+      margin: var(--ddd-spacing-4);
       display: flex;
       flex-wrap: wrap;
-      gap: var(--ddd-spacing-4, 20px);
+      gap: var(--ddd-spacing-4);
     }
   </style>
 </head>
@@ -25,19 +27,27 @@
       title="University Park" 
       label="The largest campus of Penn State." 
       image="https://picsum.photos/300/300">
-      <p>Extra content about University Park.</p>
     </psu-card>
     <psu-card 
       title="Behrend" 
       label="A vibrant campus in Erie, known for engineering and business." 
       image="https://picsum.photos/300/300">
-      <p>Extra content about Behrend.</p>
+
     </psu-card>
     <psu-card 
       title="Altoona" 
       label="A full-service campus offering a variety of programs." 
       image="https://picsum.photos/300/300">
-      <p>Extra content about Altoona.</p>
+    </psu-card>
+    <psu-card 
+      title="Balloon Zone" 
+      label="A full-service campus offering a variety of programs." 
+      image="https://picsum.photos/300/300">
+    </psu-card>
+    <psu-card 
+      title="Balloon Zone" 
+      label="A full-service campus offering a variety of programs." 
+      image="https://picsum.photos/300/300">
     </psu-card>
   </div>
   

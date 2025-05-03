@@ -5,7 +5,7 @@
 import { LitElement, html, css } from "lit";
 import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
-
+//DELETE FALLBACKS 5 cards instead of 4
 /**
  * `psu-card`
  *
@@ -50,48 +50,59 @@ export class PSUCard extends DDDSuper(I18NMixin(LitElement)) {
       super.styles,
       css`
         .card {
-          border: 1px solid var(--ddd-grey-300, #ccc);
+          font-size: var(--ddd-font-size-sm, 1em);
+          position: relative; /* allow absolute children */
+          //border: 1px solid var(--ddd-grey-300, #ccc);
           /* Updated border-radius for rounded corners */
-          border-radius: var(--ddd-radius-lg, 10px);
-          padding: var(--ddd-spacing-4, 10px);
-          box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+          border-radius: var(--ddd-radius-lg);
+          //padding: var(--ddd-spacing-4, 10px);
+         //box-shadow: 0 2px 5px rgba(0,0,0,0.1);
           width: 300px;
-          background-color: var(--ddd-white, #fff);
+          height: 500px;
+          //color: white;
+          background-color: white; /* ← make card background white */
           /* Ensuring text within the card is black by default */
-          color: #000;
+          //color: var(--ddd-black);
         }
         .card-image {
+          display: block;
+          margin: 0;
           width: 100%;
-          height: auto;
+          height: 150px;
           /* Ensuring that the image corners match the card's rounded corners */
-          border-radius: var(--ddd-radius-lg, 10px) var(--ddd-radius-lg, 10px) 0 0;
+          border-radius: var(--ddd-radius-lg) var(--ddd-radius-lg) 0 0;
         }
         .primary-bar {
           height: 10px;
-          background-color: var(--ddd-primary-7, #003087);
+          background-color: var(--ddd-theme-default-nittanyNavy);
         }
         .card-title {
-          font-size: var(--ddd-font-size-lg, 1.5em);
+          margin-top: var(--ddd-spacing-4);
+          font-size: var(--ddd-font-size-sm);
           margin: var(--ddd-spacing-2, 5px) 0;
           /* Override color to black */
           color: #000;
         }
         .card-label {
           font-size: var(--ddd-font-size-md, 1em);
-          margin-bottom: var(--ddd-spacing-4, 10px);
+          margin-bottom: var(--ddd-spacing-2);
           color: #000;
         }
         .card-link {
-          display: inline-block;
-          padding: var(--ddd-spacing-2, 5px) var(--ddd-spacing-4, 10px);
-          background-color: var(--ddd-primary-7, #003087);
-          /* Override link text to black, if desired */
-          color: #000;
+          white-space: nowrap;
+          position: absolute; /* place at bottom center */
+          bottom: var(--ddd-spacing-4);
+          left: 50%;
+          transform: translateX(-50%);
+          padding: 10px 70px;
+          background-color: var(--ddd-theme-default-nittanyNavy);
+          color: var(--ddd-white, #fff);
           text-decoration: none;
-          border-radius: var(--ddd-radius-lg, 10px);
+          border-radius: var(--ddd-radius-sm);
+          font-size: 10px;    /* make Explore text smaller */
         }
         .card-link:hover {
-          background-color: var(--ddd-primary-9, #001f5f);
+          background-color: var(--ddd-primary-9);
         }
       `
     ];
@@ -106,7 +117,7 @@ export class PSUCard extends DDDSuper(I18NMixin(LitElement)) {
         <div class="primary-bar"></div>
         <h2 class="card-title">${this.title}</h2>
         <p class="card-label">${this.label}</p>
-        <a href="#" class="card-link">Learn More</a>
+        <a href="#" class="card-link">Explore ></a>
         <slot></slot>
       </div>
     `;
