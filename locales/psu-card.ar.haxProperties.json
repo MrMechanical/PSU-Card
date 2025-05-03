@@ -2,14 +2,14 @@
     "settings": {
         "configure": [
             {
-                "title": "शीर्षक"
+                "title": "عنوان"
             }
         ]
     },
     "demoSchema": [
         {
             "properties": {
-              "title": "कस्टम मूल्य"
+              "title": "قيمة مخصصة"
             }
         }
     ]

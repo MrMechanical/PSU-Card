@@ -2,14 +2,14 @@
     "settings": {
         "configure": [
             {
-                "title": "عنوان"
+                "title": "标题"
             }
         ]
     },
     "demoSchema": [
         {
             "properties": {
-              "title": "قيمة مخصصة"
+              "title": "定制值"
             }
         }
     ]
